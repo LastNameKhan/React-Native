@@ -4,6 +4,7 @@ import {Text, View} from 'react-native';
 import Login from '../Components/Login';
 import SignUp from '../Components/SignUp';
 import TabNavigation from './TabNavigation';
+import Drawernavigation from './Drawernavigation';
 
 interface IProps {}
 
@@ -19,8 +20,9 @@ class StackNavigation extends React.Component<IProps, IState> {
   }
   render() {
     return (
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={TabNavigation} />
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Home" component={TabNavigation} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
       </Stack.Navigator>
     );

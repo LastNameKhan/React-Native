@@ -5,14 +5,10 @@
  * @format
  */
 
-import {NavigationContainer, StackActions} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import SignUp from './Components/SignUp';
-import Login from './Components/Login';
+import {StyleSheet} from 'react-native';
 import StackNavigation from './Navigation/StackNavigation';
-import TabNavigation from './Navigation/TabNavigation';
 
 interface IProps {}
 

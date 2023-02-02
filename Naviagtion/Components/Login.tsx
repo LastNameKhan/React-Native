@@ -18,6 +18,8 @@ interface IProps {
 interface IState {
   username: string;
   password: string;
+  curr: number;
+  data: any;
 }
 
 class Login extends React.Component<IProps, IState> {
@@ -27,10 +29,19 @@ class Login extends React.Component<IProps, IState> {
     this.state = {
       username: '',
       password: '',
+      curr: 0,
+      data: [
+        'https://wallpaperaccess.com/full/57166.jpg',
+        'https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg',
+        'https://mobimg.b-cdn.net/v3/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg',
+      ],
     };
   }
 
   componentDidMount = () => {
+    setInterval(() => {
+      this.setState({curr: this.state.curr + 1});
+    }, 3000);
     this.getinitialdata();
   };
 
@@ -50,7 +61,7 @@ class Login extends React.Component<IProps, IState> {
         <ImageBackground
           style={styles.backgroundImage}
           source={{
-            uri: 'https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v535batch2-mynt-43.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9f602de67a347b7c50ef8eeac3835189',
+            uri: this.state.data[this.state.curr],
           }}
         />
         <Text style={styles.logintext}>LOGIN</Text>
@@ -66,10 +77,10 @@ class Login extends React.Component<IProps, IState> {
           style={styles.passinput}
           onChangeText={e => this.setState({password: e})}
         />
-        <TouchableOpacity onPress={this.handleCheck} style={styles.loginbtn}>
+        <TouchableOpacity style={styles.loginbtn}>
           <Text style={styles.loginbtntext}>Login</Text>
         </TouchableOpacity>
-        <Text style={styles.createaccounttext}>
+        <Text onPress={this.handleCheck} style={styles.createaccounttext}>
           Dont Have Account?Create One.
         </Text>
         {/* <TabNavigation /> */}
