@@ -32,6 +32,10 @@ class Login extends React.Component<IProps, IState> {
         'https://wallpaperaccess.com/full/57166.jpg',
         'https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg',
         'https://mobimg.b-cdn.net/v3/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg',
+        'https://i.pinimg.com/originals/cd/8a/29/cd8a29d51ffe40ffc62d364525c2e234.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXdp2RrrwLpQ3VbwWe3o_iQziO2fc6D0EgGCRQx_I&s',
+        'https://i.pinimg.com/236x/46/8c/31/468c3132c7730f40515b9c2c7bff258d.jpg',
+        'https://i.pinimg.com/736x/ba/6f/57/ba6f5764aaa4e756d81ccb6a55fdc354--wallpaper-for-mobile-wallpaper-backgrounds.jpg',
       ],
     };
   }
