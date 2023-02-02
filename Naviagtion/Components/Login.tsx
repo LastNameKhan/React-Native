@@ -7,9 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {ScrollView, TextInput} from 'react-native-gesture-handler';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import TabNavigation from '../Navigation/TabNavigation';
+import {TextInput} from 'react-native-gesture-handler';
 
 interface IProps {
   navigation?: any;
@@ -41,6 +39,9 @@ class Login extends React.Component<IProps, IState> {
   componentDidMount = () => {
     setInterval(() => {
       this.setState({curr: this.state.curr + 1});
+      if (this.state.curr == this.state.data.length) {
+        this.setState({curr: 0});
+      }
     }, 3000);
     this.getinitialdata();
   };
